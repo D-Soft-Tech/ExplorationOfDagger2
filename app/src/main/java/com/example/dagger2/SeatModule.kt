@@ -6,5 +6,12 @@ import dagger.Provides
 @Module
 class SeatModule {
     @Provides
-    fun providesSeat(): Seat = Seat()
+    fun providesCushion() = Cushion()
+
+    @Provides
+    fun providesCoverings() = Coverings()
+
+    @Provides
+    fun providesSeat(cushion: Cushion, coverings: Coverings): Seat =
+        Seat(cushion, coverings)
 }
