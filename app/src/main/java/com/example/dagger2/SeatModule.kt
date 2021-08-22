@@ -5,12 +5,18 @@ import dagger.Provides
 
 @Module
 class SeatModule {
-    private val cushionFoamThickness = 100
+    private var cushionFoamThickness: Int
+    private var typeOfCoverings: String
+
+    constructor(cushionFoamThickness: Int, typeOfCoverings: String) {
+        this.cushionFoamThickness = cushionFoamThickness
+        this.typeOfCoverings = typeOfCoverings
+    }
     @Provides
     fun providesCushion() = Cushion(cushionFoamThickness)
 
     @Provides
-    fun providesCoverings() = Coverings()
+    fun providesCoverings() = Coverings(typeOfCoverings)
 
     @Provides
     fun providesSeat(cushion: Cushion, coverings: Coverings): Seat =
