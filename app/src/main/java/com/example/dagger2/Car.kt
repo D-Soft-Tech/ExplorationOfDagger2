@@ -7,6 +7,10 @@ class Car @Inject constructor(var wheel: Wheel, var engine: Engine, var seat: Se
     fun startCar() {
         engine.start()
         seat.getSetSpecifications()
-        println("Car has been started so we are driving the car.............")
+        println("Car started.............")
+    }
+
+    fun drive(petrol: Petrol) {
+        println("petrol is supplied, hence we are able to drive the car.............")
     }
 }

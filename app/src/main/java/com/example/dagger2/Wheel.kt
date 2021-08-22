@@ -2,5 +2,4 @@ package com.example.dagger2
 
 import javax.inject.Inject
 
-class Wheel @Inject constructor() {
-}
+class Wheel @Inject constructor()
