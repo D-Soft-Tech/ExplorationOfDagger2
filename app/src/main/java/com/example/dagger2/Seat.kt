@@ -1,6 +1,13 @@
 package com.example.dagger2
 
-class Seat(private var cushion: Cushion, private var coverings: Coverings) {
+class Seat {
+    var cushion: Cushion
+    var coverings: Coverings
+
+    constructor(cushion: Cushion, coverings: Coverings) {
+        this.cushion = cushion
+        this.coverings = coverings
+    }
 
     fun getSetSpecifications() {
         println(

@@ -5,18 +5,19 @@ import dagger.Provides
 
 @Module
 class SeatModule {
-    private var cushionFoamThickness: Int
-    private var typeOfCoverings: String
+//    var cushionFoamThickness: Int
+//    var typeOfCoverings: String
+//
+//    constructor(cushionFoamThickness: Int, typeOfCoverings: String) {
+//        this.cushionFoamThickness = cushionFoamThickness
+//        this.typeOfCoverings = typeOfCoverings
+//    }
 
-    constructor(cushionFoamThickness: Int, typeOfCoverings: String) {
-        this.cushionFoamThickness = cushionFoamThickness
-        this.typeOfCoverings = typeOfCoverings
-    }
-    @Provides
-    fun providesCushion() = Cushion(cushionFoamThickness)
-
-    @Provides
-    fun providesCoverings() = Coverings(typeOfCoverings)
+//    @Provides
+//    fun providesCushion(cushionFoamThickness: Int) = Cushion(cushionFoamThickness)
+//
+//    @Provides
+//    fun providesCoverings(typeOfCoverings: String) = Coverings(typeOfCoverings)
 
     @Provides
     fun providesSeat(cushion: Cushion, coverings: Coverings): Seat =

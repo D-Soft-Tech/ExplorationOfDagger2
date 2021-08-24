@@ -1,8 +1,10 @@
 package com.example.dagger2
 
-class Coverings {
+import javax.inject.Inject
 
-    private var typeOfCoverings: String
+class Coverings {
+    var typeOfCoverings: String
+    @Inject
     constructor(typeOfCoverings: String) {
         this.typeOfCoverings = typeOfCoverings
         println("Coverings created, the coverings is of type: $typeOfCoverings")
