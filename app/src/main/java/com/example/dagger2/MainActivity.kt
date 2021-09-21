@@ -1,8 +1,8 @@
 package com.example.dagger2
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import javax.inject.Inject
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     @Inject
@@ -12,11 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val carComponent = DaggerComponent.builder()
-            .provideCushionFoamThickness(225)
-            .providePowerCapacity(1000)
-            .provideTypeOfCoverings("Leather")
-            .buildTheComponent()
+        val carComponent = (application as DaggerComponentApplication).getApplicationLevelDaggerComponent()
         carComponent.injectCarIntoMainActivity(this)
         car.startCar()
         car.seat.cushion.getCushionThicknessRemark()
